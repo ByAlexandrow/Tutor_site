@@ -1,0 +1,137 @@
+{% load static %}
+<style>
+footer {
+    background-color: #333333;
+    border: 2px white solid;
+    border-radius: 30px;
+    width: 1400px;
+    height: 225px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between; /* Располагаем столбики слева и справа */
+    align-items: center;
+    padding: 0 20px; /* Добавляем отступы слева и справа */
+}
+.footer-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+}
+.logo {
+    width: 70px;
+    height: 65px;
+    margin-bottom: 10px; /* Отступ между логотипом и текстом */
+} 
+.title-logo-footer {
+    font-size: 1.2em; /* Укажите нужный размер шрифта */
+    font-weight: bold;
+    margin-bottom: 5px; /* Отступ между заголовком и подзаголовком */
+    color: white; /* Цвет текста */
+    text-align: center; /* Центрируем текст */
+}
+.subtitle-logo-header {
+    font-size: 0.9em; /* Укажите нужный размер шрифта */
+    text-align: center; /* Центрируем текст */
+    color: white; /* Цвет текста */
+}
+.navbar-brand-footer {
+    font-family: "Bruno Ace", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: white;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.navbar-brand-footer:hover {
+    color: white;
+}
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+}
+.phone-number {
+    color: white;
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 30px;
+    text-decoration: none;
+}
+.phone-number:hover {
+    text-decoration: none;
+}
+.email {
+    color: white;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 20px;
+    text-decoration: none;
+    align-content: end;
+}
+.social-icons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;   
+}
+.social-icons img {
+    cursor: pointer;
+}
+@media (max-width: 768px) {
+    footer {
+        width: 100%;
+        height: auto;
+        flex-direction: column;
+        align-items: center;
+    }
+    .footer-column {
+        margin-bottom: 20px;
+    }
+}
+</style>
+<footer class="footer py-3">
+    <div class="footer-column">
+        <a class="navbar-brand-footer" href="{% url 'homepage:index' %}">
+            <img src="/static/img/logo.svg" alt="Александрова Надежда" class="logo">
+            <span class="title-logo-footer">АЛЕКСАНДРОВА НАДЕЖДА</span>
+            <span class="subtitle-logo-header">Ваш репетитор по русскому и литературе</span>
+        </a>
+    </div>
+    <div class="footer-column contact-info">
+        <a href="tel:+79991234567" class="phone-number">8 904 698 33 44</a>
+        <a href="mailto:example@example.com" class="email">aleksandrova@mail.ru</a>
+        <div class="social-icons">
+            <a href="..." target="_blank">
+                <img src="/static/img/tg.svg" alt="Telegram" style="width: 40px; height: 40px;">
+            </a>
+            <a href="..." target="_blank">
+                <img src="/static/img/vk.svg" alt="VK" style="width: 45px; height: 45px;">
+            </a>
+        </div>
+    </div>
+</footer>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var aboutProjectLink = document.querySelector('a[href="{% url 'homepage:index' %}#about-me"]');
+        if (aboutProjectLink) {
+            aboutProjectLink.addEventListener('click', function(event) {
+                event.preventDefault();
+                var targetUrl = this.href;
+                var targetId = targetUrl.split('#')[1];
+    
+                if (window.location.pathname !== "{% url 'homepage:index' %}") {
+                    window.location.href = targetUrl;
+                } else {
+                    var targetElement = document.getElementById(targetId);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }
+            });
+        }
+    });
+</script>
