@@ -1,5 +1,13 @@
 {% load static %}
 <style>
+@font-face {
+    font-family: "Arkhip";
+    src: url('/static/fonts/Arkhip.ttf') format('truetype');
+}
+@font-face {
+    font-family: "Actay";
+    src: url('/static/fonts/Actay.otf') format('opentype');
+}
 header {
     background-color: #333333;
     position: sticky;
@@ -19,11 +27,15 @@ header {
 }
 .title-logo-header {
     font-size: 1.2em;
-    font-weight: bold;
+    font-family: "Arkhip", sans-serif;
+    font-weight: 400;
+    font-weight: normal;
 }
 .subtitle-logo-header {
-    font-family: "Marmelad", sans-serif;
-    font-weight: 200;
+    font-family: "Actay";
+    font-weight: 500;
+    font-weight: normal;
+    font-size: 0.92em;
     margin-top: 1px;
     margin-left: 20px;
 }
