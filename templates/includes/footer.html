@@ -8,9 +8,9 @@ footer {
     height: 225px;
     margin: 0 auto;
     display: flex;
-    justify-content: space-between; /* Располагаем столбики слева и справа */
+    justify-content: space-between;
     align-items: center;
-    padding: 0 20px; /* Добавляем отступы слева и справа */
+    padding: 0 20px;
 }
 .footer-column {
     display: flex;
@@ -21,19 +21,19 @@ footer {
 .logo {
     width: 70px;
     height: 65px;
-    margin-bottom: 10px; /* Отступ между логотипом и текстом */
+    margin-bottom: 10px;
 } 
 .title-logo-footer {
-    font-size: 1.2em; /* Укажите нужный размер шрифта */
+    font-size: 1.2em;
     font-weight: bold;
-    margin-bottom: 5px; /* Отступ между заголовком и подзаголовком */
-    color: white; /* Цвет текста */
-    text-align: center; /* Центрируем текст */
+    margin-bottom: 5px;
+    color: white;
+    text-align: center;
 }
-.subtitle-logo-header {
-    font-size: 0.9em; /* Укажите нужный размер шрифта */
-    text-align: center; /* Центрируем текст */
-    color: white; /* Цвет текста */
+.subtitle-logo-footer {
+    font-size: 0.9em;
+    text-align: center;
+    color: white;
 }
 .navbar-brand-footer {
     font-family: "Bruno Ace", sans-serif;
@@ -48,6 +48,23 @@ footer {
 .navbar-brand-footer:hover {
     color: white;
 }
+
+.footer-row.footer-links {
+    color: white;
+    display: flex;
+    justify-content: center; /* Центрирует ссылки по горизонтали */
+}
+
+.footer-link {
+    margin-right: 35px; /* Увеличивает расстояние между ссылками */
+    text-decoration: none;
+    color: inherit;
+}
+
+.footer-link:last-child {
+    margin-right: 0; /* Убирает отступ справа у последней ссылки */
+}
+
 .contact-info {
     display: flex;
     flex-direction: column;
@@ -98,7 +115,24 @@ footer {
         <a class="navbar-brand-footer" href="{% url 'homepage:index' %}">
             <img src="/static/img/logo.svg" alt="Александрова Надежда" class="logo">
             <span class="title-logo-footer">АЛЕКСАНДРОВА НАДЕЖДА</span>
-            <span class="subtitle-logo-header">Ваш репетитор по русскому и литературе</span>
+            <span class="subtitle-logo-footer">Ваш репетитор по русскому и литературе</span>
+        </a>
+    </div>
+    <div class="footer-row footer-links">
+        <a class="nav-link footer-link" href="{% url 'homepage:index' %}#about-me">
+            Обо мне
+        </a>
+        <a class="nav-link footer-link" href="{% url 'homepage:index' %}#advanteges">
+            Преимущества
+        </a>
+        <a class="nav-link footer-link" href="{% url 'homepage:index' %}#feedback">
+            Отзывы
+        </a>
+        <a class="nav-link footer-link" href="{% url 'homepage:index' %}#pricelist">
+            Стоимость
+        </a>
+        <a class="nav-link footer-link" href="{% url 'homepage:index' %}#contacts">
+            Контакты
         </a>
     </div>
     <div class="footer-column contact-info">
