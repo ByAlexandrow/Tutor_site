@@ -1,5 +1,8 @@
 from django.shortcuts import render
 
+from homepage.models import MainPageContent
+
 
 def index(request):
-    return render(request, template_name='homepage/index.html')
+    content = MainPageContent.objects.all()
+    return render(request, 'homepage/index.html', {'content': content})

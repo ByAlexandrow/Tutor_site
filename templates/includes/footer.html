@@ -9,7 +9,7 @@
     src: url('/static/fonts/Actay.otf') format('opentype');
 }
 footer {
-    background-color: #333333;
+    background-color: #85735F;
     border: 2px white solid;
     border-radius: 30px;
     width: 1400px;
@@ -49,9 +49,6 @@ footer {
     color: white;
 }
 .navbar-brand-footer {
-    font-family: "Bruno Ace", sans-serif;
-    font-weight: 400;
-    font-style: normal;
     color: white;
     text-decoration: none;
     display: flex;
@@ -61,23 +58,19 @@ footer {
 .navbar-brand-footer:hover {
     color: white;
 }
-
 .footer-row.footer-links {
     color: white;
     display: flex;
     justify-content: center; /* Центрирует ссылки по горизонтали */
 }
-
 .footer-link {
     margin-right: 35px; /* Увеличивает расстояние между ссылками */
     text-decoration: none;
     color: inherit;
 }
-
 .footer-link:last-child {
     margin-right: 0; /* Убирает отступ справа у последней ссылки */
 }
-
 .contact-info {
     display: flex;
     flex-direction: column;
@@ -126,7 +119,7 @@ footer {
 <footer class="footer py-3">
     <div class="footer-column">
         <a class="navbar-brand-footer" href="{% url 'homepage:index' %}">
-            <img src="/static/img/logo.svg" alt="Александрова Надежда" class="logo">
+            <img src="/static/icons/logo.svg" alt="Александрова Надежда" class="logo">
             <span class="title-logo-footer">АЛЕКСАНДРОВА НАДЕЖДА</span>
             <span class="subtitle-logo-footer">Ваш репетитор по русскому и литературе</span>
         </a>
@@ -153,10 +146,10 @@ footer {
         <a href="mailto:example@example.com" class="email">aleksandrova@mail.ru</a>
         <div class="social-icons">
             <a href="..." target="_blank">
-                <img src="/static/img/tg.svg" alt="Telegram" style="width: 40px; height: 40px;">
+                <img src="/static/icons/tg.svg" alt="Telegram" style="width: 40px; height: 40px;">
             </a>
             <a href="..." target="_blank">
-                <img src="/static/img/vk.svg" alt="VK" style="width: 45px; height: 45px;">
+                <img src="/static/icons/vk.svg" alt="VK" style="width: 45px; height: 45px;">
             </a>
         </div>
     </div>
